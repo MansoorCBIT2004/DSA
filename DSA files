@@ -35,6 +35,21 @@ while i<j:
     j-=1
 print(a)
 
+\\Check Whether an array is Plaindrome or not same code as like Reverse an element
+a=["c","b","a","c"]
+i,j=0,len(a)-1
+flag=True
+while i<j:
+    if(a[i]==a[j]):
+        i+=1
+        j-=1
+    else:
+        flag=False
+        break
+if flag:
+    print(a,"It is an palindrome")
+else:
+    print("Not a palindrome")
 \\Remove Duplicates from an array
 a=[2,5,6,8,9,4,5,3,1,2]
 seen=set()
@@ -56,6 +71,15 @@ for i in range(len(a)):
                 x+=1
         visited.append(a[i])
         print(a[i],"->",x)
+
+\\Moving Zeroes to an end
+a=[2,0,3,6,0,5,4,0,2,1,0]
+j=0
+for i in range(len(a)):
+    if(a[i]!=0):
+        a[i],a[j]=a[j],a[i]
+        j+=1
+print(a)
 
 
 
