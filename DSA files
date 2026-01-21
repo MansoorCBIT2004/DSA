@@ -81,6 +81,28 @@ for i in range(len(a)):
         j+=1
 print(a)
 
+\\Check whether a given number is Armstrong Number
+ n=153
+s=0
+temp=n
+while(temp>0):
+    x=temp%10
+    s=x*x*x+s
+    temp=temp//10
+if(s==n):
+    print("Armstrong")
+else:
+    print("Not an Armstrong")
+
+\\Reverse of a Number
+n=153
+s=0
+temp=n
+while(temp>0):
+        x=temp%10
+        s=s*10+x (TTTTTTThisss is the only difference between Armstrong and Reverse of a number)
+        temp=temp//10
+print(s)
 
 
 
