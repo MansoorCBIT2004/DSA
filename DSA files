@@ -257,7 +257,7 @@ while i < len(a) and j < len(b):
 print(c)
 \\Missing number M
 Means u r given an array of size N and given N-1 elements then find the missing number in the array
-We can do it using hashing take hast table 
+We can do it using hashing take hash table 
 a=[1,2,4,5]
 hash[n+1]=0
 for i in range(0,n):
@@ -265,6 +265,15 @@ for i in range(0,n):
 for i in range(1,n+1):
    if(hash[i]==0):
       return i
+//Missing Number
+def missing_number(arr, N):
+    xor = 0
+    for i in range(len(arr)):
+        xor ^= arr[i]
+        xor ^= (i + 1)
+    xor ^= N
+    return xor
+
     
 
         
