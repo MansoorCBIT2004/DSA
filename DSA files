@@ -274,6 +274,10 @@ def missing_number(arr, N):
     xor ^= N
     return xor
 
+///////Important Note a[i-1]=a[i] ith element go into i-1
+//////temp=n n goes into temp
+//////a[j]=a[i] i is start j is destination(destination=start)
+
     
 
         
