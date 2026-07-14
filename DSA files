@@ -277,8 +277,158 @@ def missing_number(arr, N):
 ///////Important Note a[i-1]=a[i] ith element go into i-1
 //////temp=n n goes into temp
 //////a[j]=a[i] i is start j is destination(destination=start)
+//DAYYYYYYYYYYYYYYYYY 222222222
+//Second_largest element in an array:
+a= [3, 8, 1, 6, 9, 2]
+max1=float("-inf")
+max2=float("-inf")
+for m in range(0,len(a)):
+    if a[m]>max1:
+        max2=max1
+        max1=a[m]
+    elif max2<a[m]<max1:
+        max2=a[m]
+print(max2)
 
+2.Check if array is sorted
+3.sum and average of array elements
+4.Linear Search
+a=[1,2,4,5,7,8,9]
+target=10
+for x in a:
+    if x==target:
+        print("found")
+        break
+else:
+    print("Not found")
     
+5.Occurence of Target
+a=[1, 2, 2, 3, 2, 4]
+target=2
+count=0
+for m in a:
+    if m==target:
+        count+=1
+print(count)
+
+6.Misssing Number
+a=[2,3,4,1,0]
+n=len(a)
+m=(n*(n+1))//2
+x=sum(a)
+print(m-x)
+
+7.Left Rotate an array by 1 position
+a=[2,3,4,1,0]
+temp=a[0]
+n=len(a)
+for i in range(0,n-1):
+    a[i]=a[i+1]
+a[n-1]=temp
+print(a)
+
+//Valid palindrome(((((TTWo pointer technique)))))
+//In this question isalnum() function is used for Letters and Digits 
+s="A man, a plan, a canal: Panama"
+s=list(s)
+n=len(s)
+l=0
+r=n-1
+while l<r:
+    if s[l].lower()==s[r].lower():
+        l+=1
+        r-=1
+    elif not s[l].isalnum():
+        l+=1
+    elif not s[r].isalnum():
+        r-=1
+    else:
+        print("not valid palindrome")
+        break
+else:
+    print("Valid Palindrome")
+
+//Two Sum 2
+a=[2,7,11, 15]
+target = 26
+l=0
+r=len(a)-1
+while l<r:
+    s=a[l]+a[r]
+    if s==target:
+        print([l+1,r+1])
+        break
+    elif s<target:
+        l+=1
+    elif s>target:
+        r-=1
+
+//Merge Sorted array 
+You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
+Merge nums1 and nums2 into a single array sorted in non-decreasing order.
+The final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n.
+Example 1:
+Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+Output: [1,2,2,3,5,6]
+LOGICCCCC:keep i,j pointers at len(nums)-1 and k=m+n-1 each time check which is bigger i or j th then keep them in nums 1 and thern decrease i or j .if nums2 exhausts first do nothing if nums1 exhaust first(means i=-1 then j will be >=0 so copy nums2 into nums1
+class Solution(object):
+    def merge(self, nums1, m, nums2, n):
+        i = m - 1 
+        j = n - 1  
+        k = m + n - 1  
+        while i >= 0 and j >= 0:
+            if nums1[i] > nums2[j]:
+                nums1[k] = nums1[i]
+                i -= 1
+            else:
+                nums1[k] = nums2[j]
+                j -= 1
+            k -= 1
+        while j >= 0:
+            nums1[k] = nums2[j]
+            j -= 1
+            k -= 1
+
+
+//sorted squares 
+977. Squares of a Sorted Array
+Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.
+Example 1:
+Input: nums = [-4,-1,0,3,10]
+Output: [0,1,9,16,100]
+Explanation: After squaring, the array becomes [16,1,0,9,100].
+After sorting, it becomes [0,1,9,16,100].
+LOGICCCCCCC:use two pointers appraoch l at start and r at end square both the l and r keep the largest in the Ans array and then decrease r or increase l and each time decrease k
+
+class Solution(object):
+    def sortedSquares(self, nums):
+       l=0
+       r=len(nums)-1
+       k=len(nums)-1
+       ans=[0]*len(nums)
+       while l<=r:
+
+        if nums[l]*nums[l]<nums[r]*nums[r]:
+            ans[k]=nums[r]**2
+            r-=1
+        else:
+            ans[k]=nums[l]**2
+            l+=1
+        k-=1
+       return ans
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         
 
